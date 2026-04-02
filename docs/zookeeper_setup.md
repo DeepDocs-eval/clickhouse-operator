@@ -90,7 +90,7 @@ kubectl apply -f 02-headless-service.yaml -n zoons
 ```
 Should have as a result
 ```text
-service/zookeeper-nodes created
+service/zookeepers created
 ```
 
 ### Disruption Budget
@@ -100,7 +100,7 @@ kubectl apply -f 03-pod-disruption-budget.yaml -n zoons
 ``` 
 Should have as a result
 ```text
-poddisruptionbudget.policy/zookeeper-pod-distribution-budget created
+poddisruptionbudget.policy/zookeeper-pod-disruption-budget created
 ```
 
 ### Storage Class
@@ -161,7 +161,7 @@ kubectl apply -f 05-stateful-set.yaml -n zoons
 ```
 Should have as a result
 ```text
-statefulset.apps/zookeeper-node created
+statefulset.apps/zookeeper created
 ```
 
 Now we can take a look into Zookeeper cluster deployed in k8s:
@@ -227,7 +227,7 @@ kubectl get statefulset -n zoons
 Expected output is like the following
 ```text
 NAME            READY   AGE
-zookeepers      3/3     10m
+zookeeper      3/3     10m
 ```
 
 In case all looks fine Zookeeper cluster is up and running
